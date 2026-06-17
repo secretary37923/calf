@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rui Jiang — CALF</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@900&family=Instrument+Sans:ital,wght@0,300;0,400;1,300;1,400&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{--green:#3BCC5A;--green-dark:#1A8C35;--green-deep:#0D4020;--neon:#CCFF66;--white:#FFFFFF;--yellow:#EEFF41;--muted:#6BBF7A;}
+html{scroll-behavior:smooth;}
+body{background:var(--yellow);color:var(--green-deep);font-family:'Instrument Sans',sans-serif;overflow-x:hidden;cursor:none;}
+#cur{width:10px;height:10px;background:var(--green);border-radius:50%;position:fixed;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:background 0.15s;}
+#cur2{width:30px;height:30px;border:1.5px solid var(--green);border-radius:50%;position:fixed;pointer-events:none;z-index:9998;opacity:0.5;transform:translate(-50%,-50%);transition:border-color 0.15s;}
+#page-menu-trigger{position:fixed;top:0;left:0;height:100vh;width:48px;display:flex;align-items:center;justify-content:center;z-index:600;cursor:none;}
+#page-mti{writing-mode:vertical-rl;font-family:'DM Mono',monospace;font-size:18px;font-weight:400;letter-spacing:0.3em;text-transform:uppercase;transition:color 0.3s;display:flex;flex-direction:column;align-items:center;gap:10px;color:var(--muted);}
+#page-mti::before{content:'';width:1px;height:28px;background:var(--muted);transition:background 0.3s;}
+#page-side-menu{position:fixed;left:0;top:0;height:100vh;width:280px;background:var(--green);z-index:500;padding:80px 48px;transform:translateX(-100%);transition:transform 0.65s cubic-bezier(0.76,0,0.24,1);display:flex;flex-direction:column;justify-content:center;border-right:0.5px solid rgba(255,255,255,0.25);}
+#page-side-menu.open{transform:translateX(0);}
+.pmi{display:block;font-family:'Barlow Condensed',sans-serif;font-size:28px;font-weight:900;color:var(--white);text-decoration:none;margin-bottom:4px;opacity:0.3;transition:opacity 0.25s,transform 0.25s;cursor:none;line-height:1.1;padding:6px 0;letter-spacing:-0.01em;text-transform:uppercase;transform:scaleX(0.78);transform-origin:left;}
+.pmi:hover,.pmi.active{opacity:1;transform:scaleX(0.78) translateX(6px);}
+.pmi span{display:block;font-family:'DM Mono',monospace;font-size:9px;font-weight:400;letter-spacing:0.2em;color:var(--green-deep);margin-top:3px;text-transform:uppercase;transform:scaleX(1.28);transform-origin:left;opacity:0.6;}
+.pmd{width:24px;height:1px;background:var(--white);opacity:0.2;margin:20px 0;}
+#page-mc{position:absolute;top:32px;right:28px;font-family:'DM Mono',monospace;font-size:9px;color:var(--white);cursor:none;letter-spacing:0.2em;transition:opacity 0.3s;opacity:0.4;}
+#page-ov{position:fixed;inset:0;z-index:490;background:rgba(0,64,20,0.4);opacity:0;pointer-events:none;transition:opacity 0.5s;}
+#page-ov.open{opacity:1;pointer-events:all;}
+.page-nav{position:sticky;top:0;z-index:300;padding:18px 60px 18px 80px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(13,64,32,0.12);background:var(--yellow);}
+.nav-back{font-family:'DM Mono',monospace;font-size:14px;letter-spacing:0.2em;text-transform:uppercase;color:var(--green-deep);opacity:0.5;text-decoration:none;}
+.page-hero{background:var(--yellow);min-height:42vh;display:flex;align-items:flex-end;padding:80px 100px 60px;}
+.page-title{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(60px,9vw,120px);color:var(--green-deep);line-height:0.85;letter-spacing:-0.03em;text-transform:uppercase;display:block;transform:scaleX(0.78);transform-origin:left;}
+.page-desc{font-family:'Instrument Sans',sans-serif;font-style:italic;font-size:14px;color:var(--green-deep);opacity:0.45;margin-top:20px;font-weight:300;}
+.page-content{padding:60px 100px 140px;background:var(--yellow);}
+.card-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-bottom:80px;}
+.card{text-decoration:none;color:inherit;display:block;}
+.card-img{width:100%;aspect-ratio:3/4;display:block;object-fit:cover;background:var(--green-deep);opacity:1;}
+.card-body{padding:20px 0 32px;border-bottom:1px solid rgba(13,64,32,0.12);}
+.card-tag{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.25em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;}
+.card-title{font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:900;color:var(--green-deep);line-height:1.05;letter-spacing:-0.01em;text-transform:uppercase;display:block;transform:scaleX(0.78);transform-origin:left;transition:color 0.2s;margin-bottom:6px;}
+.card:hover .card-title{color:var(--green);}
+.card-quote{font-family:'Instrument Sans',sans-serif;font-style:italic;font-size:13px;color:var(--green-deep);opacity:0.5;line-height:1.65;font-weight:300;}
+#page-footer{background:var(--green-deep);padding:20px 100px;}
+#page-footer span{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted);opacity:0.5;}
+</style>
+</head>
+<body>
+<div id="cur"></div><div id="cur2"></div>
+<div id="page-ov"></div>
+<div id="page-side-menu">
+  <span id="page-mc">[ close ]</span>
+  <a class="pmi" href="sinew.html">Sinew<span>— reviews</span></a>
+  <a class="pmi" href="picnic.html">Picnic Talk<span>— interviews</span></a>
+  <a class="pmi" href="moo.html">M-O-O</a>
+  <div class="pmd"></div>
+  <a class="pmi" href="index.html">Home</a>
+  <a class="pmi" href="about.html">About</a>
+</div>
+<div id="page-menu-trigger"><div id="page-mti">Menu</div></div>
+<nav class="page-nav">
+  <a class="nav-back" href="about.html">← Contributors</a>
+  <a class="nav-back" href="index.html">CALF Home →</a>
+</nav>
+<div class="page-hero">
+  <div>
+    <span class="page-title">Rui Jiang</span>
+    <p class="page-desc">Articles by Rui Jiang</p>
+  </div>
+</div>
+<div class="page-content">
+  <div class="card-grid">
+    <a class="card" href="article-cracked-radiant-web.html">
+      <img class="card-img" src="images/image_stephanie3.jpg" alt="A Cracked Radiant Web">
+      <div class="card-body">
+        <p class="card-tag">Review · Stephanie Hayden</p>
+        <span class="card-title">A Cracked Radiant Web</span>
+        <p class="card-quote">"Quote placeholder for this article."</p>
+      </div>
+    </a>
+    <a class="card" href="new article.html">
+      <img class="card-img" src="images/image_stephanie3.jpg" alt="A Cracked Radiant Web">
+      <div class="card-body">
+        <p class="card-tag">Review · Stephanie Hayden</p>
+        <span class="card-title">A Cracked Radiant Web</span>
+        <p class="card-quote">"Quote placeholder for this article."</p>
+      </div>
+    </a>
+  </div>
+</div>
+<div id="page-footer"><span>© CALF 2025</span></div>
+<script>
+const cur=document.getElementById('cur'),cur2=document.getElementById('cur2');let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px';});
+(function loop(){rx+=(mx-rx)*.18;ry+=(my-ry)*.18;cur2.style.left=rx+'px';cur2.style.top=ry+'px';requestAnimationFrame(loop);})();
+const pmenu=document.getElementById('page-side-menu'),pov=document.getElementById('page-ov');
+document.getElementById('page-menu-trigger').addEventListener('click',()=>{pmenu.classList.add('open');pov.classList.add('open');});
+document.getElementById('page-mc').addEventListener('click',()=>{pmenu.classList.remove('open');pov.classList.remove('open');});
+pov.addEventListener('click',()=>{pmenu.classList.remove('open');pov.classList.remove('open');});
+</script>
+</body>
+</html>
