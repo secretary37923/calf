@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Leaks, Sanctity — CALF</title>
+<title>A Cracked Radiant Web — CALF</title>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@900&family=Instrument+Sans:ital,wght@0,300;0,400;1,300;1,400&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
@@ -14,7 +14,6 @@ body{background:var(--white);color:var(--green-deep);font-family:'Instrument San
 #cur.on-green{background:#fff;}
 #cur2.on-green{border-color:#fff;}
 
-/* SLIDE MENU */
 #page-menu-trigger{position:fixed;top:0;left:0;height:100vh;width:48px;display:flex;align-items:center;justify-content:center;z-index:600;cursor:none;}
 #page-mti{writing-mode:vertical-rl;font-family:'DM Mono',monospace;font-size:18px;font-weight:400;letter-spacing:0.3em;text-transform:uppercase;transition:color 0.3s;display:flex;flex-direction:column;align-items:center;gap:10px;color:var(--muted);}
 #page-mti::before{content:'';width:1px;height:28px;background:var(--muted);transition:background 0.3s;}
@@ -31,29 +30,19 @@ body{background:var(--white);color:var(--green-deep);font-family:'Instrument San
 #page-ov{position:fixed;inset:0;z-index:490;background:rgba(0,64,20,0.4);opacity:0;pointer-events:none;transition:opacity 0.5s;}
 #page-ov.open{opacity:1;pointer-events:all;}
 
-/* NAV */
 .nav-canvas-wrap{display:block;cursor:none;line-height:0;}
 .page-nav{position:sticky;top:0;z-index:300;padding:18px 60px 18px 80px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(59,204,90,0.15);background:var(--white);}
 .nav-back{font-family:'DM Mono',monospace;font-size:14px;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color 0.3s;}
 .nav-back:hover{color:var(--green-deep);}
 
-/* ARTICLE */
 .article-wrap{max-width:720px;margin:0 auto;padding:80px 40px 120px;}
 .calf-atag{font-family:'DM Mono',monospace;font-size:14px;letter-spacing:0.25em;text-transform:uppercase;color:var(--muted);margin-bottom:24px;display:block;}
 .article-wrap h1{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(48px,6vw,80px);color:var(--green-deep);line-height:0.88;letter-spacing:-0.02em;text-transform:uppercase;transform:scaleX(0.78);transform-origin:left;display:block;margin-bottom:20px;}
 .calf-asub{font-family:'Instrument Sans',sans-serif;font-style:italic;font-size:18px;color:var(--green-dark);opacity:0.7;margin-bottom:8px;}
 .calf-aauthor{font-family:'DM Mono',monospace;font-size:14px;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);margin-bottom:40px;padding-bottom:32px;border-bottom:1px solid rgba(59,204,90,0.2);}
 
-/* IMAGE HOLDERS */
-.article-img{
-  width:100%;display:block;
-  aspect-ratio:4/3;
-  object-fit:cover;
-  background:rgba(59,204,90,0.12);
-  margin:40px 0;
-}
-.article-img.landscape{aspect-ratio:4/3;}
 .article-img{width:100%;display:block;aspect-ratio:3/4;object-fit:cover;background:rgba(59,204,90,0.12);margin:40px 0;}
+.article-img.landscape{aspect-ratio:4/3;}
 
 .calf-abody p{font-family:'Instrument Sans',sans-serif;font-size:16px;font-weight:300;line-height:1.95;color:var(--green-deep);opacity:0.8;margin-bottom:40px;}
 .calf-abody p:first-child::first-letter{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:72px;line-height:0.75;float:left;margin-right:8px;margin-top:8px;color:var(--green);}
@@ -92,26 +81,29 @@ body{background:var(--white);color:var(--green-deep);font-family:'Instrument San
   <p class="calf-aauthor">Written by Rui Jiang</p>
 
   <!-- 标题下大图 -->
-  <img class="article-img landscape" src="images/image:stephanie.jpg" alt="">
+  <img class="article-img" src="images/image_stephanie3.jpg" alt="">
 
   <div class="calf-abody">
 
     <p>Lushly affectionate, Stephanie Hayden pastes the evolving skin of street walls—wheat paste mixed with tissue paper—onto the canvas, layer upon layer upon layer, forming a tangled, cracked, cool-toned urban mat. Wrinkles are the medals of ephemeral street art, and also a stone soup hand-cooked by city kids, pecking through the surface of the paper in the repeated acts of adhesion and peeling. The hazy sky presses low; stone-like gazes turn slowly within it; eyelids slightly crease, becoming a surface that cannot be smoothed. They stretch their necks forward, riding toward the clamor, toward dusk, toward that always-elevated terrain. The ground rolls—a skin not yet fixed. The formation and the crowd, in an abnormally purple dream, head toward a trending new-world base, stubbornly attaching themselves to the shifting ground.</p>
 
     <!-- 段后图 1 -->
-    <img class="article-img" src="images/image_stephanie3.jpg" alt="">
+    <img class="article-img" src="images/image_stephanie.jpg" alt="">
 
     <p>Penetrating the back of the paper, her paintings—thick in texture—give birth to waxy gazes, pale, steep, imminent. "About a dream of girlhood salvation," Hayden says. And so the riding does not head toward a destination: toward depth, toward valleys, toward the shoving laughter of boys, toward brightening light, toward darkening skies. <em>girlhood's holy bike trip</em>, as a latecomer to the street, seems to carry only a sweet-toned endurance in its forward motion. From all directions, they suspend in the watery center of the canvas, with fully sly glances and fully unruly postures, responding to the modern, universal, cement-toned waxy yellow of the world. The figures, following the choreographic intuition brought by Hayden's dance background, lightly shuttle, measure, and traverse—upright, grounded, and expansive. She choreographs posture, choreographs spatial perspective, choreographs lighting, choreographs hair, choreographs clothing, choreographs facial expression—choreographs one damn big television. The piercing unease between the street and non-male roles, along with a tamed yet alien sky-tone, thus grows along Hayden's park rehearsals from broken wire fences into tender emotional callus. With the grooves of wheat paste and paper pulp slowing things down, perhaps some calluses are gently rubbed into being.</p>
+
+    <!-- 段后图 2 -->
+    <img class="article-img landscape" src="images/image_stephanie2.jpg" alt="">
 
     <p>As if hanging in the wind—Hayden lets the temporality of the image and its cinematic theatricality scrape against each other in opposing directions. Borrowing force from both ends, the image lifts cleanly off the ground, kissing a centrifugal will, repeatedly reenacting suspended swaying and agitation—intimate, forceful, sweat-damp. This peculiar durability extends an excess of drift toward you—rolling, almost, from the edge of a twin-size bed, startling the cat. Everything resembles the rebound of a bow pressed to its lowest point and then lifted in time; the viewer is halted on the way to that theater of the image and placed in a random midpoint—the bow pressed again and held there. The echo of wind still sticks behind the ear; we can only, with effort, walk back together. Within this interrupted and delayed rushing, Hayden's painting simmers a slowed capture and a nimble loosening, leisurely climbing back into the wind; even if it slips off beat, it merely closes its eyes again and returns to the dream to climb once more. Hayden's enduring dream thus calls in the unguarded viewer to enlist, while continuing to gather a tender chivalry that accumulates a vivid will to escape.</p>
 
     <!-- 段后图 3 -->
-    <img class="article-img" src="images/image_stephanie6.jpg" alt="">
+    <img class="article-img" src="images/image_stephanie4.jpg" alt="">
 
     <p>The cracked eyes, with a slightly transgressive pallor, render viewing itself uneasy, even drawing one into a certain suspicion within the image. Whether wide open or half-closed, the eyeballs always carry a nearly hostile suspicion, looking toward a direction that leaves one at a loss. This abrupt expression, exposed or sharply confused, continuously estranges me—wrinkles, dreams, inertia, experience, and direction entering into a small scuffle of novelty. The small scuffle benefits the health of relations, benefits the strength of a cat's cradle; relations do not settle, but remain in a light tension through repeated pulling and loosening.</p>
 
     <!-- 段后图 4 -->
-    <img class="article-img landscape" src="images/image_stephanie_7.jpg" alt="">
+    <img class="article-img landscape" src="images/image_stephanie_6.jpg" alt="">
 
   </div>
 
