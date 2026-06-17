@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>A Cracked Radiant Web — CALF</title>
+<title>Leaks, Sanctity — CALF</title>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@900&family=Instrument+Sans:ital,wght@0,300;0,400;1,300;1,400&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
@@ -14,6 +14,7 @@ body{background:var(--white);color:var(--green-deep);font-family:'Instrument San
 #cur.on-green{background:#fff;}
 #cur2.on-green{border-color:#fff;}
 
+/* SLIDE MENU */
 #page-menu-trigger{position:fixed;top:0;left:0;height:100vh;width:48px;display:flex;align-items:center;justify-content:center;z-index:600;cursor:none;}
 #page-mti{writing-mode:vertical-rl;font-family:'DM Mono',monospace;font-size:18px;font-weight:400;letter-spacing:0.3em;text-transform:uppercase;transition:color 0.3s;display:flex;flex-direction:column;align-items:center;gap:10px;color:var(--muted);}
 #page-mti::before{content:'';width:1px;height:28px;background:var(--muted);transition:background 0.3s;}
@@ -30,18 +31,28 @@ body{background:var(--white);color:var(--green-deep);font-family:'Instrument San
 #page-ov{position:fixed;inset:0;z-index:490;background:rgba(0,64,20,0.4);opacity:0;pointer-events:none;transition:opacity 0.5s;}
 #page-ov.open{opacity:1;pointer-events:all;}
 
+/* NAV */
 .nav-canvas-wrap{display:block;cursor:none;line-height:0;}
 .page-nav{position:sticky;top:0;z-index:300;padding:18px 60px 18px 80px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(59,204,90,0.15);background:var(--white);}
 .nav-back{font-family:'DM Mono',monospace;font-size:14px;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color 0.3s;}
 .nav-back:hover{color:var(--green-deep);}
 
+/* ARTICLE */
 .article-wrap{max-width:720px;margin:0 auto;padding:80px 40px 120px;}
 .calf-atag{font-family:'DM Mono',monospace;font-size:14px;letter-spacing:0.25em;text-transform:uppercase;color:var(--muted);margin-bottom:24px;display:block;}
 .article-wrap h1{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(48px,6vw,80px);color:var(--green-deep);line-height:0.88;letter-spacing:-0.02em;text-transform:uppercase;transform:scaleX(0.78);transform-origin:left;display:block;margin-bottom:20px;}
 .calf-asub{font-family:'Instrument Sans',sans-serif;font-style:italic;font-size:18px;color:var(--green-dark);opacity:0.7;margin-bottom:8px;}
 .calf-aauthor{font-family:'DM Mono',monospace;font-size:14px;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);margin-bottom:40px;padding-bottom:32px;border-bottom:1px solid rgba(59,204,90,0.2);}
 
-.article-img.landscape{width:100%;display:block;aspect-ratio:4/3;object-fit:cover;background:rgba(59,204,90,0.12);margin:40px 0;}
+/* IMAGE HOLDERS */
+.article-img{
+  width:100%;display:block;
+  aspect-ratio:4/3;
+  object-fit:cover;
+  background:rgba(59,204,90,0.12);
+  margin:40px 0;
+}
+.article-img.landscape{aspect-ratio:4/3;}
 .article-img{width:100%;display:block;aspect-ratio:3/4;object-fit:cover;background:rgba(59,204,90,0.12);margin:40px 0;}
 
 .calf-abody p{font-family:'Instrument Sans',sans-serif;font-size:16px;font-weight:300;line-height:1.95;color:var(--green-deep);opacity:0.8;margin-bottom:40px;}
@@ -81,7 +92,7 @@ body{background:var(--white);color:var(--green-deep);font-family:'Instrument San
   <p class="calf-aauthor">Written by Rui Jiang</p>
 
   <!-- 标题下大图 -->
-  <img class="article-img" src="images/image:stephanie.jpg" alt="">
+  <img class="article-img landscape" src="images/image:stephanie.jpg" alt="">
 
   <div class="calf-abody">
 
