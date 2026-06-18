@@ -7,13 +7,13 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
 :root{
-  --mustard:#FFD700;
-  --mustard-light:#FFD700;
+  --mustard:#FCDFB3;
+  --mustard-light:#FCDFB3;
   --mustard-dark:#6B5500;
   --mustard-pale:#FFF0A0;
   --green:#3BCC5A;--green-dark:#1A8C35;--green-deep:#0D4020;
-  --neon:#E8FFB0;--white:#FFFFFF;--yellow:#EEFF41;--muted:#6BBF7A;
-  --ink:#E8FFB0;
+  --neon:#ba7d75;--white:#FFFFFF;--yellow:#EEFF41;--muted:#6BBF7A;
+  --ink:#82190d;
 }
 html{scroll-behavior:smooth;}
 body{background:var(--mustard);color:var(--ink);font-family:'Instrument Sans',sans-serif;overflow-x:hidden;cursor:none;}
@@ -22,24 +22,24 @@ body{background:var(--mustard);color:var(--ink);font-family:'Instrument Sans',sa
 
 /* SLIDE MENU */
 #page-menu-trigger{position:fixed;top:0;left:0;height:100vh;width:48px;display:flex;align-items:center;justify-content:center;z-index:600;cursor:none;}
-#page-mti{writing-mode:vertical-rl;font-family:'DM Mono',monospace;font-size:18px;font-weight:400;letter-spacing:0.3em;text-transform:uppercase;transition:color 0.3s;display:flex;flex-direction:column;align-items:center;gap:10px;color:rgba(59,204,90,0.5);}
+#page-mti{writing-mode:vertical-rl;font-family:'DM Mono',monospace;font-size:18px;font-weight:400;letter-spacing:0.3em;text-transform:uppercase;transition:color 0.3s;display:flex;flex-direction:column;align-items:center;gap:10px;color:#82261a;}
 #page-mti::before{content:'';width:1px;height:28px;background:var(--mustard-dark);transition:background 0.3s;}
 #page-menu-trigger:hover #page-mti{color:var(--ink);}
 #page-menu-trigger:hover #page-mti::before{background:var(--ink);}
-#page-side-menu{position:fixed;left:0;top:0;height:100vh;width:280px;background:#E8FFB0;z-index:500;padding:80px 48px;transform:translateX(-100%);transition:transform 0.65s cubic-bezier(0.76,0,0.24,1);display:flex;flex-direction:column;justify-content:center;border-right:0.5px solid rgba(0,0,0,0.08);}
+#page-side-menu{position:fixed;left:0;top:0;height:100vh;width:280px;background:#FCDFB3;z-index:500;padding:80px 48px;transform:translateX(-100%);transition:transform 0.65s cubic-bezier(0.76,0,0.24,1);display:flex;flex-direction:column;justify-content:center;border-right:0.5px solid rgba(0,0,0,0.08);}
 #page-side-menu.open{transform:translateX(0);}
-.pmi{display:block;font-family:'Barlow Condensed',sans-serif;font-size:28px;font-weight:900;color:#FFD700;text-decoration:none;margin-bottom:4px;opacity:0.3;transition:opacity 0.25s,transform 0.25s;cursor:none;line-height:1.1;padding:6px 0;letter-spacing:-0.01em;text-transform:uppercase;transform:scaleX(0.78);transform-origin:left;}
+.pmi{display:block;font-family:'Barlow Condensed',sans-serif;font-size:28px;font-weight:900;color:#ba7d75;text-decoration:none;margin-bottom:4px;opacity:0.3;transition:opacity 0.25s,transform 0.25s;cursor:none;line-height:1.1;padding:6px 0;letter-spacing:-0.01em;text-transform:uppercase;transform:scaleX(0.78);transform-origin:left;}
 .pmi:hover,.pmi.active{opacity:1;transform:scaleX(0.78) translateX(6px);}
-.pmi span{display:block;font-family:'DM Mono',monospace;font-size:18px;font-weight:400;letter-spacing:0.2em;color:rgba(59,204,90,0.5);margin-top:3px;text-transform:uppercase;transform:scaleX(1.28);transform-origin:left;opacity:0.6;}
+.pmi span{display:block;font-family:'DM Mono',monospace;font-size:18px;font-weight:400;letter-spacing:0.2em;color:#82261a;margin-top:3px;text-transform:uppercase;transform:scaleX(1.28);transform-origin:left;opacity:0.6;}
 .pmd{width:24px;height:1px;background:rgba(255,215,0,0.3);margin:20px 0;}
 #page-mc{position:absolute;top:32px;right:28px;font-family:'DM Mono',monospace;font-size:18px;color:rgba(59,204,90,0.5);cursor:none;letter-spacing:0.2em;transition:opacity 0.3s;opacity:0.5;}
-#page-mc:hover{opacity:1;color:#FFD700;}
+#page-mc:hover{opacity:1;color:#ba7d75;}
 #page-ov{position:fixed;inset:0;z-index:490;background:rgba(100,90,0,0.3);opacity:0;pointer-events:none;transition:opacity 0.5s;}
 #page-ov.open{opacity:1;pointer-events:all;}
 
 /* NAV */
 .nav-canvas-wrap{display:block;cursor:none;line-height:0;}
-.page-nav{position:sticky;top:0;z-index:300;padding:18px 60px 18px 80px;display:flex;justify-content:space-between;align-items:center;border-bottom:0.5px solid rgba(26,20,0,0.15);background:var(--mustard);}
+.page-nav{position:sticky;top:0;z-index:300;padding:18px 60px 18px 80px;display:flex;justify-content:space-between;align-items:center;border-bottom:0.5px solid rgba(186,125,117,0.25);background:var(--mustard);}
 .nav-section{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.3em;text-transform:uppercase;color:var(--ink);opacity:0.4;}
 
 /* HERO */
@@ -61,11 +61,11 @@ body{background:var(--mustard);color:var(--ink);font-family:'Instrument Sans',sa
   text-decoration:none;
   color:inherit;
   padding:48px 0;
-  border-bottom:0.5px solid rgba(26,20,0,0.15);
+  border-bottom:0.5px solid rgba(186,125,117,0.25);
   transition:opacity 0.2s;
   cursor:none;
 }
-.moo-item:hover{opacity:0.7;}
+.moo-item:hover{opacity:0.6;}
 .moo-item:first-child{padding-top:0;}
 
 .moo-tag{display:none;}
@@ -92,7 +92,7 @@ body{background:var(--mustard);color:var(--ink);font-family:'Instrument Sans',sa
 }
 .moo-author{
   font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.18em;
-  text-transform:uppercase;color:rgba(59,204,90,0.5);margin-top:16px;
+  text-transform:uppercase;color:#82261a;margin-top:16px;
   display:block;
 }
 
@@ -154,7 +154,7 @@ body{background:var(--mustard);color:var(--ink);font-family:'Instrument Sans',sa
 </div>
 
 <a id="top-btn" href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">↑ Back to top</a>
-<div id="page-footer" style="background:var(--green-deep);padding:20px 100px;"><span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted);opacity:0.5;">© CALF 2025</span></div>
+<div id="page-footer" style="background:#82261a;padding:20px 100px;"><span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted);opacity:0.5;">© CALF 2025</span></div>
 
 <script>
 function _drawGrass(canvas,fontSize,colors){
