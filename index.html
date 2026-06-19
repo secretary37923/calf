@@ -120,10 +120,11 @@ body{background:var(--white);color:var(--green-deep);font-family:'Instrument San
 #sinew-carousel-header{padding:0 100px 40px;display:flex;justify-content:space-between;align-items:baseline;}
 
 /* Outer wrapper: arrows + track */
-#carousel-outer{position:relative;display:flex;align-items:center;}
-.c-arrow{position:absolute;z-index:10;top:0;bottom:40%;width:48px;display:flex;align-items:center;justify-content:center;background:transparent;border:none;font-size:44px;color:var(--green);cursor:pointer;font-family:'DM Mono',monospace;opacity:0.8;transition:opacity 0.2s;}.c-arrow:hover{background:rgba(255,255,255,0.8);}
-.c-arrow-l{left:0;}
-.c-arrow-r{right:0;}
+#carousel-outer{display:flex;align-items:center;gap:16px;}
+.c-arrow{position:static;width:40px;height:40px;flex-shrink:0;display:flex;align-items:center;justify-content:center;background:transparent;border:none;font-size:20px;color:var(--green);cursor:pointer;opacity:0.7;transition:opacity 0.2s;font-family:'DM Mono',monospace;}
+.c-arrow:hover{opacity:1;}
+.c-arrow-l{order:-1;}
+.c-arrow-r{order:999;}
 
 #carousel-track-wrap { padding: 0 !important; overflow: hidden; }
 #carousel-track{display:flex;gap:0;transition:transform 0.5s cubic-bezier(0.76,0,0.24,1);}
@@ -141,16 +142,25 @@ body{background:var(--white);color:var(--green-deep);font-family:'Instrument San
 
 /* MOO CAROUSEL */
 #moo-outer{position:relative;display:flex;align-items:stretch;}
-.m-arrow{position:absolute;z-index:10;top:0;bottom:40%;width:48px;display:flex;align-items:center;justify-content:center;background:transparent;border:none;font-size:44px;color:#82190D;cursor:pointer;font-family:'DM Mono',monospace;opacity:0.8;transition:opacity 0.2s;}.c-arrow:hover{background:rgba(255,255,255,0.8);}
-
+.m-arrow{position:absolute;z-index:10;top:0;bottom:0;width:48px;display:flex;align-items:center;justify-content:center;background:transparent;border:none;font-size:22px;color:#82190d;cursor:pointer;font-family:'DM Mono',monospace;opacity:0.7;transition:opacity 0.2s;}
 .m-arrow:hover{opacity:1;}
 .m-arrow-l{left:0;}
 .m-arrow-r{right:0;}
 #moo-track-wrap{overflow:hidden;flex:1;}
 #moo-track{display:flex;gap:0;transition:transform 0.5s cubic-bezier(0.76,0,0.24,1);}
 #moo-track .sc{flex:0 0 100%;}
+ 
+ 
+ 
+/* MOO CAROUSEL */
+#moo-outer{display:flex;align-items:center;gap:16px;}
+.m-arrow{width:40px;height:40px;flex-shrink:0;display:flex;align-items:center;justify-content:center;background:transparent;border:none;font-size:20px;color:#82190d;cursor:pointer;opacity:0.7;transition:opacity 0.2s;font-family:'DM Mono',monospace;}
+.m-arrow:hover{opacity:1;}
+#moo-track-wrap{overflow:hidden;flex:1;}
+#moo-track{display:flex;gap:0;transition:transform 0.5s cubic-bezier(0.76,0,0.24,1);}
+#moo-track .sc{flex:0 0 100%;}
 
-
+  
 /* ===== MOBILE RESPONSIVE ===== */
 @media (max-width: 768px) {
 
